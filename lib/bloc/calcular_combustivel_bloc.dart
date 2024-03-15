@@ -19,6 +19,7 @@ class CalcularCombustivelBloc{
       mensagem.show(context: context, title:'Resultado', alert: 'Etanol é melhor');
     } else {
       resultado = 'Gasolina é melhor';
+      mensagem.show(context: context, title:'Resultado', alert: 'Gasolina é melhor');
     }
   }
 }

@@ -1,8 +1,9 @@
-import 'dart:js';
-
 import 'package:aula03/bloc/calcular_combustivel_bloc.dart';
+import 'package:aula03/ui/pages/sobre_page.dart';
 import 'package:aula03/ui/widgets/campo_texto.dart';
+import 'package:aula03/ui/widgets/menu_lateral.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,10 +14,22 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  late List<Map> listaMenu;
+
+  void _abrirSobre() {
+    Navigator.push(context, MaterialPageRoute(
+        builder: (context) => SobrePage()));
+  }
+
   @override
   Widget build(BuildContext context) {
     // Quando o nome do objeto começa com underline. indica que é privado
     final _calcBloc = CalcularCombustivelBloc(context);
+
+    listaMenu = [
+      {"Texto": "Sobre", "Clique": _abrirSobre}
+  ];
+
     return Placeholder(
       child: Scaffold(
           appBar: AppBar(title: const Row(
@@ -35,6 +48,7 @@ class _HomePageState extends State<HomePage> {
           ),
             backgroundColor: Color(0xFF136066),
           ),
+          drawer: MenuLateral(listaItens: listaMenu),
           // Botão que fica no canto inferior direito
           floatingActionButton: FloatingActionButton(
               onPressed: () {

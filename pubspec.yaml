@@ -39,7 +39,8 @@ dependencies:
   timer_button: ^2.1.1
   flutter_animated_button: ^2.0.3
   loading_icon_button: ^0.0.6
-
+  animated_icon: ^0.0.9
+  ionicons: ^0.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
